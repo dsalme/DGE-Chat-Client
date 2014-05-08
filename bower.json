@@ -1,0 +1,30 @@
+{
+  "name": "DGE-Chat-Client",
+  "version": "0.0.0",
+  "authors": [
+    "David Salmeron <dsalme@gmail.com>"
+  ],
+  "description": "Chat Client for DGE-Chat-Server",
+  "keywords": [
+    "DGE",
+    "Chat",
+    "Client"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-foundation": "~0.2.0",
+    "angular-route": "~1.2.16",
+    "angular-socket-io": "~0.6.0",
+    "angular": "~1.2.16",
+    "foundation": "~5.2.2",
+    "socket.io-client": "~0.9.16"
+  }
+}
