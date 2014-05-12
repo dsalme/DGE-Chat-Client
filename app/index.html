@@ -8,11 +8,19 @@
 <body>
 <div ng-controller="ChatCtrl">
     <span ng-bind="'Nick: ' + message.author"></span>
-    <div ng-model="messageLog"></div>
-    <input type="text" name="" ng-model="message.content"/>
+
+    <div>
+        <span ng-repeat="message in messageLog">
+            <span ng-bind="message.author"></span><span ng-bind="message.content"></span>
+        </span>
+    </div>
+    <form ng-submit="sendMessage(message)">
+        <input type="text" name="" ng-model="message.content"/>
+        <button class="success">Send</button>
+    </form>
 </div>
 
-<script src="./bower_components/socket.io-client/dist/socket.io.js"></script>
+<script type="application/javascript" src="./bower_components/socket.io-client/dist/socket.io.js"></script>
 <script type="application/javascript" src="./bower_components/angular/angular.js"></script>
 <script type="application/javascript" src="./bower_components/angular-route/angular-route.js"></script>
 <script type="application/javascript" src="./bower_components/angular-socket-io/socket.js"></script>
@@ -20,6 +28,9 @@
 <!-- CONTROLLERS -->
 
 <script type="application/javascript" src="./scripts/app.js"></script>
-<script type="application/javascript" src="./scripts/controllers/chatCtrl"></script>
+<script type="application/javascript" src="./scripts/controllers/chatCtrl/chatCtrl.js"></script>
+
+<!-- SERVICES -->
+<script type="application/javascript" src="./scripts/services/socketService.js"></script>
 </body>
 </html>
