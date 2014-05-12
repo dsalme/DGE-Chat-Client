@@ -11,13 +11,14 @@
 
     <div>
         <span ng-repeat="message in messageLog">
-            <span ng-bind="message.author"></span><span ng-bind="message.content"></span>
+            <span title="{{message.createdAt}}" ng-bind="message.author +': ' + message.content"></span><br ng-if="!$last"/>
         </span>
     </div>
     <form ng-submit="sendMessage(message)">
         <input type="text" name="" ng-model="message.content"/>
         <button class="success">Send</button>
     </form>
+    {{message}}
 </div>
 
 <script type="application/javascript" src="./bower_components/socket.io-client/dist/socket.io.js"></script>
