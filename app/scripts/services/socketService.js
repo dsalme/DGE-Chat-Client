@@ -6,7 +6,8 @@ app.factory('socketService', function (socketFactory) {
     var mySocket = socketFactory({
         ioSocket: myIoSocket
     });
-    mySocket.forward('broadcast');
+    mySocket.forward(['broadcast', 'newMessage']);
+    //mySocket.forward();
 
     return {
         mySocket : mySocket,

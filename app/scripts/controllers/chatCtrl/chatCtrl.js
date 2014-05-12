@@ -27,7 +27,7 @@ app.controller('ChatCtrl', ['$scope', 'socketService', '$log', function ($scope,
         $log.debug('se dispara la funcion que recibe como callback, con el mensaje: ' + message.content);
 
     };
-    socketService.mySocket.forward('newMessage', $scope);
+    //socketService.mySocket.forward(['newMessage', 'broadcast'], $scope);
     $scope.$on('socket:newMessage', function (event, data) {
         $log.debug('got a message from: ', data.author);
         $log.debug('event: ', event);
@@ -40,5 +40,4 @@ app.controller('ChatCtrl', ['$scope', 'socketService', '$log', function ($scope,
             //log$scope.messageLog = messageFormatter(new Date(), data.source, data.payload) + $scope.messageLog;
         });
     });
-}])
-;
+}]);
