@@ -2,23 +2,25 @@
 <html ng-app="DGE-Chat-Client">
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./bower_components/foundation/css/foundation.css"/>
+    <!-- <link rel="stylesheet" href="./bower_components/foundation/css/foundation.css"/>-->
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./styles/home.css"/>
     <title></title>
 </head>
 <body>
 <div ng-controller="ChatCtrl">
-    <span ng-bind="'Nick: ' + message.author"></span>
+    <span class="label label-default" ng-bind="'/nick nuevoNick para cambiar el nickName'"></span><br/>
+    <span class="label label-success" ng-bind="'Nick: ' + message.author"></span>
 
-    <div>
+    <div class="well scroll">
         <span ng-repeat="message in messageLog">
             <span title="{{message.createdAt}}" ng-bind="message.author +': ' + message.content"></span><br ng-if="!$last"/>
         </span>
     </div>
     <form ng-submit="sendMessage(message)">
-        <input type="text" name="" ng-model="message.content"/>
-        <button class="success">Send</button>
+        <input type="text" class="input-sm" name="" ng-model="message.content"/>
+        <button class="btn btn-success">Send</button>
     </form>
-    {{message}}
 </div>
 
 <script type="application/javascript" src="./bower_components/socket.io-client/dist/socket.io.js"></script>
