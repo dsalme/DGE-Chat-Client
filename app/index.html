@@ -14,7 +14,7 @@
 
     <div class="well scroll">
         <span ng-repeat="message in messageLog">
-            <span title="{{message.createdAt}}" ng-bind="message.author +': ' + message.content"></span><br ng-if="!$last"/>
+            <span ng-class="{label: message.author == 'Server', 'label-success': message.author == 'Server'}" title="{{message.createdAt}}" ng-bind="message.author +': ' + message.content"></span><br ng-if="!$last"/>
         </span>
     </div>
     <form ng-submit="sendMessage(message)">
