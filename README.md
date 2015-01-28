@@ -1,4 +1,4 @@
-DGE-Chat-Client
+MEAN-Chat-Client-TEST
 ===============
 
-Chat Client para DGE-Chat-Server
+Chat Client para MEAN-Chat-Server-TEST
